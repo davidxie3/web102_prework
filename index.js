@@ -130,6 +130,27 @@ function filterFundedOnly() {
     addGamesToPage(fundedGames);
 }
 
+function sortByFund() {
+    deleteChildElements(gamesContainer);
+
+    let sortedGames = GAMES_JSON.sort((game1, game2) => {
+        return game2.pledged - game1.pledged;
+    });
+
+    addGamesToPage(sortedGames);
+}
+
+function sortByNames() {
+    deleteChildElements(gamesContainer);
+
+    let sortedGames = GAMES_JSON.sort((game1, game2) => {
+        return game1.name.localeCompare(game2.name);
+    });
+    
+    addGamesToPage(sortedGames);
+}
+
+
 // show all games
 function showAllGames() {
     deleteChildElements(gamesContainer);
@@ -139,10 +160,18 @@ function showAllGames() {
 }
 
 // select each button in the "Our Games" section
+const sortBtn = document.getElementById("sort-fund-btn");
+sortBtn.addEventListener("click", sortByFund);
+
+const sortNameBtn = document.getElementById("sort-name-btn");
+sortNameBtn.addEventListener("click", sortByNames);
+
 const unfundedBtn = document.getElementById("unfunded-btn");
 unfundedBtn.addEventListener("click", filterUnfundedOnly);
+
 const fundedBtn = document.getElementById("funded-btn");
 fundedBtn.addEventListener("click", filterFundedOnly);
+
 const allBtn = document.getElementById("all-btn");
 allBtn.addEventListener("click", showAllGames);
 
@@ -172,6 +201,7 @@ let unfundedGamesDisplay = `There ${unfundedGamesString} ${unfundedGames.length}
 descriptionContainer.innerHTML += unfundedGamesDisplay;
 
 // create a new DOM element containing the template string and append it to the description container
+
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games

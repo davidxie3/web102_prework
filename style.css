@@ -66,9 +66,10 @@ body {
     box-shadow: 0 0 30px lightblue;
 }
 
-#button-container {
+#button-container, #sort-container {
     text-align: center;
 }
+
 
 button {
     font-family: 'Cabin';
