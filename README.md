@@ -25,6 +25,8 @@ Here's a walkthrough of implemented features:
 
 <img src='https://imgur.com/a/wHuGCIH' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+https://imgur.com/KhsdW5d
+
 GIF created with ScreenToGif.
 
 
